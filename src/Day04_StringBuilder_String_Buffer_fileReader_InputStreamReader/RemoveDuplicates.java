@@ -16,7 +16,7 @@ public class RemoveDuplicates {
         StringBuilder sb=new StringBuilder();
 
         for(int i=0;i<len;i++){
-            if(!st.contains(s.charAt(i))){  // Checking the character present in sset or not
+            if(!st.contains(s.charAt(i))){  // Checking the character present in set or not
                 sb.append(s.charAt(i));
                 st.add(s.charAt(i));
             }

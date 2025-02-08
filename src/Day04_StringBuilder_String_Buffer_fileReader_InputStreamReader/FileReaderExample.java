@@ -8,6 +8,7 @@ public class FileReaderExample {
         String fileName = "D:\\JavaFull Stack\\Project_Producer_consumer\\src\\Main.java";
 
         // Try-with-resources ensures automatic resource management
+
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
 
@@ -20,6 +21,7 @@ public class FileReaderExample {
         } catch (IOException e) {
             // Handle file read errors
             System.err.println("Error: " + e.getMessage());
+
         }
     }
 }

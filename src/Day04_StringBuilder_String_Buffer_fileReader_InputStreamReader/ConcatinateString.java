@@ -3,8 +3,10 @@ package Day04_StringBuilder_String_Buffer_fileReader_InputStreamReader;
 import java.util.Scanner;
 
 public class ConcatinateString {
+
     static StringBuffer concatinationOfString(String [] arr,int n){
-        StringBuffer sb=new StringBuffer();
+        StringBuffer sb=new StringBuffer();  // Creating the StringBuffer class to store distinct element
+
         for(int i=0;i<n;i++){
             sb.append(arr[i]);
         }
@@ -26,7 +28,7 @@ public class ConcatinateString {
         }
         StringBuffer concatString=concatinationOfString(arr,n);
 
-        System.out.println("After the concatination of all string in array is"+concatString);
+        System.out.println("After the concatination of all string in array is "+concatString);
 
     }
 }
