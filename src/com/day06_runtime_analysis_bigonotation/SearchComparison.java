@@ -6,23 +6,23 @@ import java.util.Random;
 public class SearchComparison {
 
     // Implementing the Linear Search
-    public static int linearSearch(int[] arr, int target) {
+    public static boolean linearSearch(int[] arr, int target) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == target) {
-                return i;
+                return true;
             }
         }
-        return -1;
+        return false;
     }
 
     // Implementing the binary Search
-    public static int binarySearch(int[] arr, int target) {
+    public static boolean binarySearch(int[] arr, int target) {
         int left = 0;
         int right = arr.length - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;   // Finding the mid
             if (arr[mid] == target) {
-                return mid;  // Meet the target
+                return true;  // Meet the target
             }
             if (arr[mid] < target) {
                 left = mid + 1;
@@ -30,7 +30,7 @@ public class SearchComparison {
                 right = mid - 1;
             }
         }
-        return -1;  // Target not found
+        return false;  // Target not found
     }
 
     public static void main(String[] args) {
@@ -49,7 +49,9 @@ public class SearchComparison {
             // Linear Search
             long startTime = System.nanoTime(); // Starting when linear search start
 
-            linearSearch(data, target);
+            boolean flag1=linearSearch(data, target);
+
+            if(flag1)  System.out.println("Target get found in nums using linear search");
 
             long endTime = System.nanoTime(); // Ending when linear search start
 
@@ -61,8 +63,9 @@ public class SearchComparison {
 
             startTime = System.nanoTime();  // Starting when binary search start
 
-            binarySearch(data, target);
+            boolean flag2=binarySearch(data, target);
             endTime = System.nanoTime();  // Ending when binary search start
+            if(flag2)  System.out.println("Target get found in nums using binary search");
 
             // Finding the time taken by binarySearch
             long binarySearchTime = endTime - startTime;
